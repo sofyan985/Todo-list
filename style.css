@@ -1,109 +1,296 @@
-body {
-    font-family: 'Poppins', Arial, sans-serif;
+/* General Reset */
+body, html {
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-   background-image: url(double-bubble.webp);
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
 }
 
-.container {
-    width: 90%;
-    max-width: 600px;
-    margin: 20px auto;
-    text-align: center;
-    border: solid 1px black;
+
+
+
+
+/* Background Animation */
+.area {
+    background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
 }
 
-header h1 {
+.circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.circles li {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+}
+
+
+
+
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+/* Keyframe Animation */
+@keyframes animate {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 0; }
+    100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
+}
+
+/* Glassmorphic To-Do List */
+.todo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    max-width: 500px; /* Increased width for better button alignment */
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+}
+
+ .todo-header {
+    font-size: 1.98rem;
+    margin-bottom: 20px;
+  
+
+    
+     color: #FFCC70; }
+     h1 {
+        font-family: "Archivo Black", sans-serif;
+        font-weight: normal;
+        font-size: 2.38em;
+        text-align: center;
+        margin-bottom: 17px;
+        
+      } 
+   
+
+
+
+    .gradient-text {
+        text-align: center;
+        /* Fallback: Set a background color. */
+        /* background-color: red; */
+        
+        /* Create the gradient. */
+        background-image: linear-gradient(45deg, #f3ec78, #af4261);
+        
+        /* Set the background size and repeat properties. */
+        background-size: 100%;
+        background-repeat: repeat;
+      
+        /* Use the text as a mask for the background. */
+        /* This will show the gradient as a text color rather than element bg. */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+      
+      }
+
+
+
+.todo-input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.todo-input input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+}
+
+.todo-input button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #be2182;
+    background-image: linear-gradient(40deg, #f3ec78, #af4261);
+  font-weight: bolder;
+  font-family: 'Times New Roman', Times, serif;
+      
+        
+    color: #2a2b2c;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.todo-input button:hover {
+    background-image: none;
+    background-color: #C850C0;
+    color: #fff;
+}
+
+#taskList {
+    margin-top: 10px;
+}
+
+/* Task Items */
+.task {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 1rem;
+   
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.task .details {
+    flex: 1; /* Ensure details take up available space */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px;
+    
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.task .details .time {
+    margin-left: 10px;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Buttons for Each Task */
+.task button {
+    border: none;
+    /* background: #c4beb3; */
+    color:#332e30;
+    background-color: #eee986;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 5px; /* Add spacing between buttons */
+    font-size: 0.9rem;
+
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+.task button:hover {
+    background: #C850C0;
+}
+
+
+/* header heading */
+.todo-header h1 {
     font-size: 2.5rem;
     color: #ffcc00;
     margin-bottom: 5px;
 }
-
-header h3 {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.task-input {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.task-input input {
-    flex: 1;
-    padding: 10px;
-    border: 2px solid #ffcc00;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.task-input button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ffcc00;
-    color: #333;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.task-input button:hover {
-    background-color: #e6b800;
-}
-
-.task-list {
-    margin-top: 20px;
-    text-align: left;
-}
-
-.task {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.task .details {
-    display: flex;
-    flex-direction: column;
-}
-
-.task .details .time {
-    font-size: 0.8rem;
-    color: #888;
-}
-
-.task button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #d62bec;
-    color: #333;
-    font-size: 0.9rem;
-    cursor: pointer;
-}
-
-.task button:hover {
-    background-color: #fa31df;
-}
-
-
-
-
-
-
-
-
-
-

@@ -3,25 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskMaster by Rohullah Hamid</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>To-Do List with Glassmorphic Background</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>TaskMaster</h1>
-            <h3>Dedicated to Sir Imran Rashid</h3>
-        </header>
-
-        <div class="task-input">
-            <input type="text" id="taskInput" placeholder="Enter your task here..." />
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+<!-- class="todo-header"  -->
+    <div class="todo-container">
+        <h1 class="gradient-text">TaskMaster</h1>
+        <div class="todo-input">
+            <input type="text" id="taskInput" placeholder="Enter your task here...">
             <button id="addTaskButton">Add Task</button>
         </div>
-
-        <div class="task-list" id="taskList">
-            <!-- Tasks will appear here -->
-        </div>
+        <div id="taskList"></div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
